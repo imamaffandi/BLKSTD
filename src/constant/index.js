@@ -8,7 +8,7 @@ import {
   tandamata,
 } from "../assets/projects/documentation";
 import { idx, kpei, mks2, mss, pasarmodal } from "../assets/projects/motion";
-export const navLinks = [
+const links = [
   {
     id: "about",
     title: "About",
@@ -21,6 +21,10 @@ export const navLinks = [
   {
     id: "team",
     title: "Our Team",
+  },
+  {
+    id: "contact",
+    title: "Contact Us",
   },
 ];
 export const socmed = [
@@ -55,7 +59,26 @@ const team = [
     index: 1,
   },
 ];
-
+const testimoni = [
+  {
+    name: "",
+    icon: "",
+    message:
+      " &quot;Overall videonya much better than the script. Bagus bangeettt dapet emosinya. Good job mas Dika and team!&quot;",
+  },
+  {
+    name: "",
+    icon: "",
+    message:
+      "&quot;Barusan video dipresentasikan, penontonnya dari Asia dan Europe, semua terkesan dengan video ini, terima kasih banyak atas kerja kerasnya di weekend. Video diminta langsung oleh lukas, katanya mau dikasih lihat keluarganya&quot;",
+  },
+  {
+    name: "",
+    icon: "",
+    message:
+      "  &quot;Respect buat mas Dika dan tim. Waktu terbatas tapi tetap total menggarap materi yang tingkat kesulitannya lumayan tinggi. Semoga ke depan kita bisa collab lagi under a more conducive circumstances. Salam dari mas Adrex, Deru dan semua di Chemistry. Semoga rekan2 ssemuanya selalu dibekali kesehatan dan kesuksesan.&quot;",
+  },
+];
 const compro = [
   {
     title: "Helwa Digital Ads",
@@ -114,7 +137,7 @@ const documentation = [
     link: "https://youtu.be/J_ojjgG6wsM",
   },
 ];
-const motion = [
+const mograph = [
   {
     title: "Video Product IDX",
     image: idx,
@@ -147,4 +170,4 @@ const motion = [
   },
 ];
 
-export { compro, documentation, motion, team };
+export { links, testimoni, compro, documentation, mograph, team };

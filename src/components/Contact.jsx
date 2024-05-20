@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { phone, location, mail } from "../assets";
+import { Link } from "react-scroll";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -7,7 +8,7 @@ const Contact = () => {
   const [message, setMessage] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    const url = `https://wa.me/6281230677319?text=Nama: ${name}, Email: ${email}, ${message}`;
+    const url = `https://wa.me/628113577793?text=Perkenalkan nama saya ${name},dengan Email: ${email}, ${message}`;
     window.open(url, "_blank");
 
     setName("");
@@ -124,28 +125,25 @@ const Contact = () => {
         </section>
 
         <section>
-          <button
-            className="btt-btn flex gap-2 items-center"
-            onClick={() => {
-              window.scrollTo(0, 0);
-            }}
-          >
-            <div className="bebas text-xl">Back to Top</div>
-            <svg
-              strokeWidth="2"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              width="20px"
-            >
-              <path
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-              ></path>
-            </svg>
-          </button>
+          <Link to="about" smooth="true">
+            <button className="btt-btn flex gap-2 items-center">
+              <div className="bebas text-xl">Back to Top</div>
+              <svg
+                strokeWidth="2"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20px"
+              >
+                <path
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                ></path>
+              </svg>
+            </button>
+          </Link>
         </section>
       </div>
     </main>

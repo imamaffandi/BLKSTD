@@ -4,8 +4,8 @@ export const container = {
     opacity: 1,
 
     transition: {
-      delayChildren: 10,
-      staggerChildren: 10,
+      delayChildren: 0.1,
+      staggerChildren: 0.2,
       ease: "linear",
     },
   },

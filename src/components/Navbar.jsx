@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { navLinks } from "../constant";
+import { links } from "../constant";
 import { menu, close } from "../assets";
 import { instagram, tiktok, youtube } from "../assets";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { right, left } from "../utils/motion";
 
@@ -30,16 +30,17 @@ const Navbar = () => {
             />
 
             <ul className="flex gap-3 items-center list-none px-5">
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${
-                    active === link.title ? "text-mid" : "text-white"
-                  } hover:text-mid hover:opacity-45 text-[18px] font-medium bebas cursor-pointer`}
-                  onClick={() => setActive(link.title)}
-                >
-                  <Link to={`/${link.id}`}>{link.title}</Link>
-                </li>
+              {links.map((link) => (
+                <Link to={link.id} key={link.id} smooth="true" duration={500}>
+                  <li
+                    className={`${
+                      active === link.title ? "text-white" : "text-slate-500"
+                    } hover:text-white hover:opacity-75 text-[18px] font-medium bebas cursor-pointer`}
+                    onClick={() => setActive(link.title)}
+                  >
+                    {link.title}
+                  </li>
+                </Link>
               ))}
             </ul>
           </motion.div>
@@ -86,21 +87,21 @@ const Navbar = () => {
                 setActive("");
                 window.scrollTo(0, 0);
               }}
-              className="size-10 object-cover"
+              className="size-10 object-cover scroll-smooth"
               src="/logo-fav.png"
               alt="logo blackstudio"
             />
 
             <ul className="flex gap-3 items-center list-none px-5">
-              {navLinks.map((link) => (
+              {links.map((link) => (
                 <li
                   key={link.id}
                   className={`${
-                    active === link.title ? "text-mid" : "text-white"
-                  } hover:text-mid text-[18px] font-medium bebas cursor-pointer`}
+                    active === link.title ? "text-blue-900" : "text-white"
+                  } hover:text-blue-800 text-[18px] font-medium bebas cursor-pointer`}
                   onClick={() => setActive(link.title)}
                 >
-                  <Link to={`/${link.id}`}>{link.title}</Link>
+                  <Link to={link.id}>{link.title}</Link>
                 </li>
               ))}
             </ul>

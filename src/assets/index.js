@@ -9,7 +9,11 @@ import close from "./close.svg";
 import menu from "./menu.svg";
 import dummy from "./dummy.avif";
 import message from "./message.svg";
+import dummysvg from "./dummy.svg";
+import fren from "./fren.svg";
 export {
+  fren,
+  dummysvg,
   dummy,
   message,
   instagram,
