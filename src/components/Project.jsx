@@ -7,18 +7,18 @@ const Project = () => {
   return (
     <>
       {" "}
-      <main className="sm:py-5 bg-darkest">
-        <div className="flex flex-col sm:flex-row h-screen">
+      <main className="md:py-5 bg-darkest">
+        <div className="flex flex-col md:flex-row h-screen">
           <motion.section
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="px-10 pt-10 sm:p-28 w-full  sm:w-1/2 text-white"
+            className="px-10 pt-10 md:p-28 w-full  md:w-1/2 text-white"
           >
             <p className="text-5xl font-black bebas">
               A glimpse into the creative magic we create
             </p>
-            <p className="montserat text-sm sm:text-md">
+            <p className="montserat text-md md:text-md">
               Discover the stories behind our work. We invite you to explore our
               diverse portfolio, featuring impactful photography, captivating
               videography, stunning graphic design, and dynamic motion graphics.
@@ -30,7 +30,7 @@ const Project = () => {
             variants={left}
             initial="hidden"
             whileInView="visible"
-            className="px-10 sm:p-28 w-full sm:w-1/2 text-white"
+            className="px-10 md:p-28 w-full md:w-1/2 text-white"
           >
             <img src={dummysvg} alt="" />
           </motion.section>

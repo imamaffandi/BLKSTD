@@ -4,7 +4,7 @@ const Chatbot = () => {
   const [toggle, setToggle] = useState(false);
   return (
     <>
-      <div
+      <button
         onClick={() => setToggle(!toggle)}
         className="fixed rounded-full p-2 text-center right-20 bottom-20 z-20 bg-black hover:scale-110 transition cursor-pointer"
       >
@@ -22,12 +22,45 @@ const Chatbot = () => {
             strokeLinejoin="round"
           />
         </svg>
-      </div>
+      </button>
       <div
         className={`${
-          !toggle ? "hidden" : "flex"
-        }p-20 bottom-10 left-10 z-50 absolute bg-white`}
-      ></div>
+          !toggle ? "hidden" : "block"
+        }p-20 bottom-32 right-20 z-50 fixed`}
+      >
+        <div className="w-80 nav rounded-lg overflow-hidden p-2">
+          <div className="bg-gradient-to-t from-black to-gray-800 w-full text-white bebas tracking-wider rounded-md text-lg p-2">
+            Chat
+          </div>
+          <ul className=" overflow-y-scroll h-96">
+            <li className="m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left">
+              <p className="font-md text-sm montserat">Response</p>
+              <p className="font-light text-sm poppins">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Praesentium saepe deleniti animi inventore dolorem a omnis ut
+                vel tempore tempora?
+              </p>
+            </li>
+            <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
+              <p className="font-md text-sm montserat">User</p>
+              <p className="font-light text-sm poppins">
+                Lorem ipsum dolor sit amet?
+              </p>
+            </li>
+          </ul>
+
+          <div className="flex gap-1 p-2">
+            <input
+              type="text"
+              className="text-sm rounded-md px-5 flex-1 montserat"
+              placeholder="Type your message here"
+            />
+            <button className="bg-gradient-to-t from-black to-gray-900 p-3 rounded-md bebas text-white">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

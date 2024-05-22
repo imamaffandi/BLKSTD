@@ -4,4 +4,15 @@ import Chatbot from "./Chatbot";
 import About from "./About";
 import Project from "./Project";
 import Team from "./Team";
-export { Navbar, Contact, Chatbot, About, Project, Team };
+import Lazyload from "./Lazyload";
+import Loadingscreen from "./Loadingscreen";
+export {
+  Navbar,
+  Contact,
+  Chatbot,
+  About,
+  Project,
+  Team,
+  Lazyload,
+  Loadingscreen,
+};

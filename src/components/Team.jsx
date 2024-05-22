@@ -8,12 +8,12 @@ const Team = () => {
   return (
     <>
       <main className="w-full bg-darkest text-light flex flex-col py-5">
-        <section className="sm:h-screen flex flex-col-reverse sm:flex-row py-20 px-10 sm:p-28">
+        <section className="md:h-screen flex flex-col-reverse md:flex-row py-20 px-10 md:p-28">
           <motion.section
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="sm:w-1/2"
+            className="md:w-1/2"
           >
             <p className="font-black text-6xl bebas">
               {" "}
