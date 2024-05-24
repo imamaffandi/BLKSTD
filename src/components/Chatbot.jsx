@@ -3,10 +3,12 @@ import { useState } from "react";
 const Chatbot = () => {
   const [toggle, setToggle] = useState(false);
   return (
-    <>
+    <main>
       <button
-        onClick={() => setToggle(!toggle)}
-        className="fixed rounded-full p-2 text-center right-20 bottom-20 z-20 bg-black hover:scale-110 transition cursor-pointer"
+        onClick={() => {
+          setToggle(!toggle);
+        }}
+        className="fixed rounded-full p-2 text-center right-5 bottom-5 sm:right-20 sm:bottom-20 z-20 bg-black hover:scale-105 active:scale-95 transition cursor-pointer"
       >
         <svg
           className="size-7"
@@ -23,45 +25,39 @@ const Chatbot = () => {
           />
         </svg>
       </button>
-      <div
-        className={`${
-          !toggle ? "hidden" : "block"
-        }p-20 bottom-32 right-20 z-50 fixed`}
-      >
-        <div className="w-80 nav rounded-lg overflow-hidden p-2">
-          <div className="bg-gradient-to-t from-black to-gray-800 w-full text-white bebas tracking-wider rounded-md text-lg p-2">
-            Chat
-          </div>
-          <ul className=" overflow-y-scroll h-96">
-            <li className="m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left">
-              <p className="font-md text-sm montserat">Response</p>
-              <p className="font-light text-sm poppins">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Praesentium saepe deleniti animi inventore dolorem a omnis ut
-                vel tempore tempora?
-              </p>
-            </li>
-            <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
-              <p className="font-md text-sm montserat">User</p>
-              <p className="font-light text-sm poppins">
-                Lorem ipsum dolor sit amet?
-              </p>
-            </li>
-          </ul>
+      {toggle ? (
+        <div className=" bottom-20 right-5 sm:bottom-32 sm:right-10 z-50 fixed">
+          <div className="w-80 rounded-lg overflow-hidden p-2 glass">
+            <div className="bg-gradient-to-t from-black to-gray-800 w-full text-white bebas tracking-wider rounded-md text-lg p-2">
+              Chatbot
+            </div>
+            <ul className=" overflow-y-scroll h-80 sm:h-96 ">
+              <li className="m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left">
+                <p className="font-md text-sm montserat">Chatbot</p>
+                <p className="font-light text-sm poppins">
+                  Hi, How can I help you today?
+                </p>
+              </li>
+              <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
+                <p className="font-md text-sm montserat">User</p>
+                <p className="font-light text-sm poppins">Cihuy</p>
+              </li>
+            </ul>
 
-          <div className="flex gap-1 p-2">
-            <input
-              type="text"
-              className="text-sm rounded-md px-5 flex-1 montserat"
-              placeholder="Type your message here"
-            />
-            <button className="bg-gradient-to-t from-black to-gray-900 p-3 rounded-md bebas text-white">
-              Send
-            </button>
+            <div className="flex gap-1 p-2">
+              <input
+                type="text"
+                className="text-sm rounded-md px-5 flex-1 montserat focus:outline-none"
+                placeholder="Ask your question here"
+              />
+              <button className="bg-gradient-to-t from-black to-gray-900 p-3 rounded-md bebas text-white transition hover:scale-105 active:scale-95">
+                Send
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </>
+      ) : null}
+    </main>
   );
 };
 

@@ -15,10 +15,12 @@ const App = () => {
       <Suspense fallback={<Loadingscreen />}>
         <Navbar />
         <Chatbot />
-        <About />
-        <Project />
-        <Team />
-        <Contact />
+        <div className="z-0">
+          <About />
+          <Project />
+          <Team />
+          <Contact />
+        </div>
       </Suspense>
     </div>
   );
