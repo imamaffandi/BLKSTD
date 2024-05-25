@@ -20,6 +20,7 @@ const Navbar = () => {
             className="flex justify-evenly items-center"
           >
             <img
+              loading="lazy"
               onClick={() => {
                 setActive("");
                 window.scrollTo(0, 0);
@@ -54,6 +55,7 @@ const Navbar = () => {
             className="hidden md:flex size-5 gap-3 items-center"
           >
             <img
+              loading="lazy"
               alt="ig icon"
               className="hover:cursor-pointer"
               src={instagram}
@@ -62,6 +64,7 @@ const Navbar = () => {
               }}
             />
             <img
+              loading="lazy"
               alt="tiktok icon"
               className="hover:cursor-pointer"
               src={tiktok}
@@ -72,6 +75,7 @@ const Navbar = () => {
               }}
             />
             <img
+              loading="lazy"
               alt="yt icon"
               className="hover:cursor-pointer"
               src={youtube}
@@ -89,6 +93,7 @@ const Navbar = () => {
           "
           >
             <img
+              loading="lazy"
               onClick={() => {
                 setActive("");
                 window.scrollTo(0, 0);
@@ -98,6 +103,7 @@ const Navbar = () => {
               alt="blackstudio logo"
             />
             <img
+              loading="lazy"
               src={toggle ? close : menu}
               alt="menu"
               className="size-5 object-contain cursor-pointer"
@@ -129,6 +135,7 @@ const Navbar = () => {
             </div>
             <div className="flex size-5 gap-3 items-center">
               <img
+                loading="lazy"
                 className="hover:cursor-pointer"
                 src={instagram}
                 onClick={() => {
@@ -136,6 +143,7 @@ const Navbar = () => {
                 }}
               />
               <img
+                loading="lazy"
                 className="hover:cursor-pointer"
                 src={tiktok}
                 onClick={() => {
@@ -145,6 +153,7 @@ const Navbar = () => {
                 }}
               />
               <img
+                loading="lazy"
                 className="hover:cursor-pointer"
                 src={youtube}
                 onClick={() => {

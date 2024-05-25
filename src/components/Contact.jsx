@@ -98,11 +98,25 @@ const Contact = () => {
       </section>
       <div className="p-5 bg-darkest text-white w-full bottom-0 md:absolute flex flex-col md:flex-row md:items-center gap-2 justify-around">
         <section>
-          <img className="size-10" src="/logo-fav.png" alt="logo blackstudio" />
+          <picture
+            loading="lazy"
+            className="size-10"
+            srcSet="
+            /logo-fav.png 300w,
+            /logo-fav.png 900w,
+            /logo-fav.png 1800w"
+            src="/logo-fav.png"
+            alt="logo blackstudio"
+          />
         </section>
         <section>
           <div className="flex items-center gap-2">
-            <img className="size-5" src={location} alt="location icon" />
+            <img
+              loading="lazy"
+              className="size-5"
+              src={location}
+              alt="location icon"
+            />
             <a
               href="https://www.google.com/maps/place/blackstudio.id/@6.8399707,83.3252569,5z/data=!4m6!3m5!1s0x2e788770ae61f63f:0x528f9e856f2ac2af!8m2!3d-7.8743799!4d112.5126909!16s%2Fg%2F11h52zv_8x?entry=ttu"
               target="_blank"
@@ -113,11 +127,16 @@ const Contact = () => {
         </section>
         <section>
           <div className="flex items-center gap-2">
-            <img className="size-5" src={mail} alt="mail icon" />
+            <img loading="lazy" className="size-5" src={mail} alt="mail icon" />
             <p>blackstudio.id@gmail.com</p>
           </div>
           <div className="flex items-center gap-2">
-            <img className="size-5" src={phone} alt="phone icon" />
+            <img
+              loading="lazy"
+              className="size-5"
+              src={phone}
+              alt="phone icon"
+            />
             <p>+628113577793</p>
           </div>
         </section>

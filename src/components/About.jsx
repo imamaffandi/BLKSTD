@@ -5,9 +5,7 @@ import { dummy } from "../assets";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Loadingscreen from "./Loadingscreen";
-import Lazyload from "./Lazyload";
 import {
   right,
   left,
@@ -25,7 +23,7 @@ const Testimonial = () => {
   return (
     <Suspense fallback={<Loadingscreen />}>
       <main className="flex flex-col md:flex-row justify-center items-center">
-        <div className="w-full md:w-1/3 p-3 border h-64 rounded-t-md md:rounded-r-none md:rounded-l-md flex flex-col justify-between ">
+        <div className="w-full md:w-1/3 p-3 border h-64 rounded-t-md md:rounded-r-none md:rounded-l-md flex flex-col justify-between bg-stone-950">
           <p className="poppins font-light text-md">
             {" "}
             &quot;Overall videonya much better than the script. Bagus bangeettt
@@ -35,7 +33,7 @@ const Testimonial = () => {
             Lorem ipsum dolor sit amet.
           </p>
         </div>
-        <div className="w-full md:w-1/3 p-3 border border-y-0 md:border-y md:border-x-0 h-64 flex flex-col justify-between ">
+        <div className="w-full md:w-1/3 p-3 border border-y-0 md:border-y md:border-x-0 h-64 flex flex-col justify-between bg-stone-950">
           <p className="poppins font-light text-md">
             {" "}
             &quot;Barusan video dipresentasikan, penontonnya dari Asia dan
@@ -45,7 +43,7 @@ const Testimonial = () => {
           </p>
           <p className="bebas text-lg tracking-wider">Lorem, ipsum dolor.</p>
         </div>
-        <div className="w-full md:w-1/3 p-3 border h-64 rounded-b-md md:rounded-l-none md:rounded-r-md flex flex-col justify-between ">
+        <div className="w-full md:w-1/3 p-3 border h-64 rounded-b-md md:rounded-l-none md:rounded-r-md flex flex-col justify-between bg-stone-950">
           <p className="poppins font-light text-md">
             &quot;Respect buat mas Dika dan tim. Waktu terbatas tapi tetap total
             menggarap materi yang tingkat kesulitannya lumayan tinggi. Semoga ke
@@ -66,7 +64,8 @@ const Items = () => {
         {brands.map((brand) => {
           return (
             <div key={brand.index} className="px-5 overflow-x-hidden">
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 className="size-20 md:size-32"
                 src={brand.icon}
                 alt=""
@@ -83,12 +82,12 @@ const About = () => {
   return (
     <>
       {/* Home */}
-      <Suspense fallback={<Lazyload />}>
+      <Suspense fallback={<Loadingscreen />}>
         <section className="h-screen bg-darkest w-full overflow-hidden flex flex-col justify-center ">
-          <LazyLoadImage
+          <img
+            loading="lazy"
             className="absolute right-0 top-10 md:top-20"
             src="/2.png"
-            placeholderSrc="/2placeholder.png"
             alt="blackstudio logo"
           />
           <motion.div
@@ -170,7 +169,8 @@ const About = () => {
               whileInView="visible"
               className=" glass flex flex-col items-center rounded-md p-10  text-white font-semibold"
             >
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 className="size-10 md:size-20"
                 alt="videography"
                 src={vigraph}
@@ -183,7 +183,8 @@ const About = () => {
               whileInView="visible"
               className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
             >
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 className="size-10 md:size-20"
                 alt="photography"
                 src={photgraph}
@@ -196,7 +197,8 @@ const About = () => {
               whileInView="visible"
               className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
             >
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 className="size-10 md:size-20"
                 alt="graphic design"
                 src={desgraph}
@@ -209,7 +211,8 @@ const About = () => {
               whileInView="visible"
               className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
             >
-              <LazyLoadImage
+              <img
+                loading="lazy"
                 className="size-10 md:size-20"
                 alt="graphic motion"
                 src={mograph}
@@ -224,7 +227,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
           >
-            <img src={dummy} alt="foto" />
+            <img loading="lazy" src={dummy} alt="foto" />
           </motion.section>
           <motion.section
             variants={left}

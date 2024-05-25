@@ -1,4 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { instagram } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
@@ -32,7 +31,7 @@ const Team = () => {
             initial="hidden"
             whileInView="visible"
           >
-            <LazyLoadImage src={fren} alt="our team" />
+            <img loading="lazy" src={fren} alt="our team" />
           </motion.section>
         </section>
         <motion.main
@@ -49,6 +48,7 @@ const Team = () => {
           >
             <div className="relative overflow-hidden">
               <img
+                loading="lazy"
                 src="https://docs.material-tailwind.com/img/team-3.jpg"
                 alt="profile-picture"
               />
@@ -63,6 +63,7 @@ const Team = () => {
                 </p>
               </div>
               <img
+                loading="lazy"
                 src={instagram}
                 className="size-7 self-center hover:cursor-pointer"
                 alt=""

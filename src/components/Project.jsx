@@ -32,7 +32,7 @@ const Project = () => {
             whileInView="visible"
             className="px-10 md:p-28 w-full md:w-1/2 text-white"
           >
-            <img src={dummysvg} alt="" />
+            <img loading="lazy" src={dummysvg} alt="" />
           </motion.section>
         </div>
         <section className="p-5">
@@ -63,6 +63,7 @@ const Project = () => {
                   className="relative cursor-pointer flex flex-col justify-end pt-40 pb-4 overflow-hidden bg-black md:pt-28 isolate rounded-xl dark:shadow dark:shadow-gray-400/50"
                 >
                   <img
+                    loading="lazy"
                     src={list.image}
                     alt={list.title}
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
@@ -104,6 +105,7 @@ const Project = () => {
                   className="relative cursor-pointer flex flex-col justify-end pt-40 pb-4 overflow-hidden bg-black md:pt-28 isolate rounded-xl dark:shadow dark:shadow-gray-400/50"
                 >
                   <img
+                    loading="lazy"
                     src={list.image}
                     alt={list.title}
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
@@ -145,6 +147,7 @@ const Project = () => {
                   className="relative cursor-pointer flex flex-col justify-end pt-40 pb-4 overflow-hidden bg-black md:pt-28 isolate rounded-xl dark:shadow dark:shadow-gray-400/50"
                 >
                   <img
+                    loading="lazy"
                     src={list.image}
                     alt={list.title}
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
