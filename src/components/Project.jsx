@@ -15,6 +15,9 @@ const Project = () => {
             whileInView="visible"
             className="px-10 pt-10 md:p-28 w-full  md:w-1/2 text-white"
           >
+            <p className="text-md font-black bebas opacity-75">
+              Our latest projects
+            </p>
             <p className="text-5xl font-black bebas">
               A glimpse into the creative magic we create
             </p>
@@ -23,7 +26,7 @@ const Project = () => {
               diverse portfolio, featuring impactful photography, captivating
               videography, stunning graphic design, and dynamic motion graphics.
               Get inspired by how we&apos;ve helped brands elevate their visual
-              identity and connect with their target audience.
+              identity.
             </p>
           </motion.section>
           <motion.section
@@ -48,7 +51,7 @@ const Project = () => {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
             {compro.map((list) => {
               return (
@@ -90,7 +93,7 @@ const Project = () => {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
             {documentation.map((list) => {
               return (
@@ -132,7 +135,7 @@ const Project = () => {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            className="grid max-w-2xl grid-cols-1 gap-8 mx-auto mt-8 auto-rows-fr lg:mx-0 lg:max-w-none lg:grid-cols-4"
           >
             {mograph.map((list) => {
               return (

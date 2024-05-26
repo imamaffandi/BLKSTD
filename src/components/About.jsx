@@ -106,7 +106,7 @@ const About = () => {
                 <span className="hidden md:inline">
                   We combine innovative ideas with exceptional execution to
                   deliver high-quality photography, videography, graphic design,
-                  and motion graphics that resonate with your audience.
+                  and motion graphics.
                 </span>
               </p>
             </div>
@@ -153,7 +153,7 @@ const About = () => {
               At BLACKSTUDIO.ID, we spark imagination with fresh ideas and
               translate them into reality with flawless execution. We deliver
               top-tier photography, videography, graphic design, and motion
-              graphics that leave a lasting impression on your target audience.
+              graphics.
             </p>
           </motion.section>
           <motion.section

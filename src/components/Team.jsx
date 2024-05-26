@@ -14,6 +14,7 @@ const Team = () => {
             whileInView="visible"
             className="md:w-1/2"
           >
+            <p className="font-black text-md opacity-75 bebas">Our Team</p>
             <p className="font-black text-6xl bebas">
               {" "}
               The Faces Behind the Creative Spark

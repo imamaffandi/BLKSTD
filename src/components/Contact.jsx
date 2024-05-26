@@ -17,10 +17,11 @@ const Contact = () => {
   };
   return (
     <main className="relative md:h-screen contact " id="contact">
-      <p className="bebas bg-white md:bg-transparent md:absolute left-10 bottom-32 text-6xl text-white">
-        CONTACT US
-      </p>
-      <section className=" md:absolute md:top-20 md:right-10">
+      <div className="bg-white md:bg-transparent md:absolute left-10 bottom-32 text-white">
+        <p className="bebas text-md opacity-75">CONTACT US</p>
+        <p className="bebas  text-6xl">Let's get in touch</p>
+      </div>
+      <section className=" md:absolute md:top-10 md:right-10">
         <div
           className="text-md text-black flex flex-col gap-2.5 px-6 py-8 bg-white
   "
@@ -96,73 +97,78 @@ const Contact = () => {
           </form>
         </div>
       </section>
-      <div className="p-5 bg-darkest text-white w-full bottom-0 md:absolute flex flex-col md:flex-row md:items-center gap-2 justify-around">
-        <section>
-          <picture
-            loading="lazy"
-            className="size-10"
-            srcSet="
-            /logo-fav.png 300w,
-            /logo-fav.png 900w,
-            /logo-fav.png 1800w"
-            src="/logo-fav.png"
-            alt="logo blackstudio"
-          />
-        </section>
-        <section>
-          <div className="flex items-center gap-2">
+      <main className="p-3 bg-darkest text-white w-full bottom-0 md:absolute  ">
+        <div className=" flex flex-col md:flex-row md:items-center gap-2 justify-around">
+          <section>
             <img
               loading="lazy"
-              className="size-5"
-              src={location}
-              alt="location icon"
+              className="size-10"
+              src="/logo-fav.png"
+              alt="logo blackstudio"
             />
-            <a
-              href="https://www.google.com/maps/place/blackstudio.id/@6.8399707,83.3252569,5z/data=!4m6!3m5!1s0x2e788770ae61f63f:0x528f9e856f2ac2af!8m2!3d-7.8743799!4d112.5126909!16s%2Fg%2F11h52zv_8x?entry=ttu"
-              target="_blank"
-            >
-              Main Office | Kota Batu, Malang, Jawa timur
-            </a>
-          </div>
-        </section>
-        <section>
-          <div className="flex items-center gap-2">
-            <img loading="lazy" className="size-5" src={mail} alt="mail icon" />
-            <p>blackstudio.id@gmail.com</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <img
-              loading="lazy"
-              className="size-5"
-              src={phone}
-              alt="phone icon"
-            />
-            <p>+628113577793</p>
-          </div>
-        </section>
-
-        <section>
-          <Link to="about" smooth="true">
-            <button className="btt-btn flex gap-2 items-center">
-              <div className="bebas text-xl">Back to Top</div>
-              <svg
-                strokeWidth="2"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20px"
+          </section>
+          <section>
+            <div className="flex items-center gap-2">
+              <img
+                loading="lazy"
+                className="size-5"
+                src={location}
+                alt="location icon"
+              />
+              <a
+                href="https://www.google.com/maps/place/blackstudio.id/@6.8399707,83.3252569,5z/data=!4m6!3m5!1s0x2e788770ae61f63f:0x528f9e856f2ac2af!8m2!3d-7.8743799!4d112.5126909!16s%2Fg%2F11h52zv_8x?entry=ttu"
+                target="_blank"
               >
-                <path
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                ></path>
-              </svg>
-            </button>
-          </Link>
-        </section>
-      </div>
+                Main Office | Kota Batu, Malang, Jawa timur
+              </a>
+            </div>
+          </section>
+          <section>
+            <div className="flex items-center gap-2">
+              <img
+                loading="lazy"
+                className="size-5"
+                src={mail}
+                alt="mail icon"
+              />
+              <p>blackstudio.id@gmail.com</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <img
+                loading="lazy"
+                className="size-5"
+                src={phone}
+                alt="phone icon"
+              />
+              <p>+628113577793</p>
+            </div>
+          </section>
+          <section>
+            <Link to="about" smooth="true">
+              <button className="btt-btn flex gap-2 items-center">
+                <div className="bebas text-xl">Back to Top</div>
+                <svg
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20px"
+                >
+                  <path
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  ></path>
+                </svg>
+              </button>
+            </Link>
+          </section>
+        </div>
+        <div className="text-white font-sans font-thin opacity-50">
+          <p className="w-full text-center pt-1">BLACKSTUDIO.ID&copy;2024</p>
+        </div>
+      </main>
     </main>
   );
 };

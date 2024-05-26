@@ -9,7 +9,7 @@ const Chatbot = () => {
           setToggle(!toggle);
         }}
         aria-label="Chatbot"
-        className="fixed rounded-full p-2 text-center right-5 bottom-5 sm:right-20 sm:bottom-20 z-20 bg-black hover:scale-105 active:scale-95 transition cursor-pointer"
+        className="fixed animate-bounce rounded-full p-2 text-center right-5 bottom-5 sm:right-10 sm:bottom-10 z-20 bg-black hover:scale-105 active:scale-95 transition cursor-pointer"
       >
         <svg
           className="size-7"
@@ -27,7 +27,7 @@ const Chatbot = () => {
         </svg>
       </button>
       {toggle ? (
-        <div className=" bottom-20 right-5 sm:bottom-32 sm:right-10 z-50 fixed">
+        <div className=" bottom-20 right-5 sm:bottom-20 sm:right-10 z-50 fixed">
           <div className="w-80 rounded-lg overflow-hidden p-2 glass">
             <div className="bg-black w-full text-white bebas tracking-wider rounded-md text-lg p-2">
               Chatbot
