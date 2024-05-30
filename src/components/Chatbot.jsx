@@ -1,7 +1,64 @@
 import { useState } from "react";
+import {
+  GoogleGenerativeAI,
+  HarmCategory,
+  HarmBlockThreshold,
+} from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI("AIzaSyAvPiQi1A3hpkcOL_V4LTggX2_zEihBzWc");
+const model = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash",
+  systemInstruction:
+    "You are customer service of Blackstudio.id, a video production house. Established in 2019, based in Batu - Malang, East Java. They combine innovative ideas with exceptional execution to deliver high-quality photography, videography, graphic design, and motion graphics. Email for this office is blackstudio.id@gmail.com, user can call this number for order a services. Your office at Jl. Suropati Gg. 9 No.20, RT.1/RW.8, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur . If user ask about cost and price of our product, you must tell user to contact a admin at contact section. Also you can speak multilingual language, like English and Indonesia. If user ask you with Bahasa Indonesia, please answer it with Bahasa too. And dont answer question outside context above.\n\nKeep your answers under 5 sentences long, and use professional tone\nin your answers.",
+});
+
+const generationConfig = {
+  temperature: 1,
+  topP: 0.95,
+  topK: 64,
+  maxOutputTokens: 8192,
+  responseMimeType: "text/plain",
+};
+
+const safetySettings = [
+  {
+    category: HarmCategory.HARM_CATEGORY_HARASSMENT,
+    threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
+    threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
+    threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+  },
+  {
+    category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+    threshold: HarmBlockThreshold.BLOCK_MEDIUM_AND_ABOVE,
+  },
+];
 
 const Chatbot = () => {
   const [toggle, setToggle] = useState(false);
+  const [userInput, setUserInput] = useState("");
+  const [chatSession, setChatSession] = useState(
+    model.startChat({
+      generationConfig,
+      safetySettings,
+    })
+  );
+  const [conversationHistory, setConversationHistory] = useState([]);
+
+  const sendMessage = async (input) => {
+    const result = await chatSession.sendMessage(input);
+    console.log(result.response.text());
+    setConversationHistory((prevHistory) => [
+      ...prevHistory,
+      result.response.text(),
+    ]);
+    setUserInput("");
+  };
   return (
     <main>
       <button
@@ -39,9 +96,18 @@ const Chatbot = () => {
                   Hi, How can I help you today?
                 </p>
               </li>
+              {conversationHistory.map((message, index) => (
+                <li
+                  key={index}
+                  className={`m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left`}
+                >
+                  <p className="font-md text-sm montserat">Chatbot</p>
+                  <p className="font-light text-sm poppins">{message}</p>
+                </li>
+              ))}
               <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
                 <p className="font-md text-sm montserat">User</p>
-                <p className="font-light text-sm poppins">Cihuy</p>
+                <p className="font-light text-sm poppins">{userInput}</p>
               </li>
             </ul>
 
@@ -50,8 +116,16 @@ const Chatbot = () => {
                 type="text"
                 className="text-sm rounded-md px-5 flex-1 montserat focus:outline-none"
                 placeholder="Ask your question here"
+                value={userInput}
+                onChange={(event) => setUserInput(event.target.value)}
               />
-              <button className="bg-gradient-to-t from-black to-gray-950 p-3 rounded-md bebas text-white transition hover:scale-105 active:scale-95">
+              <button
+                onClick={() => {
+                  sendMessage(userInput);
+                  setUserInput("");
+                }}
+                className="bg-gradient-to-t from-black to-gray-950 p-3 rounded-md bebas text-white transition hover:scale-105 active:scale-95"
+              >
                 Send
               </button>
             </div>
