@@ -17,9 +17,9 @@ const Contact = () => {
   };
   return (
     <main className="relative md:h-screen contact " id="contact">
-      <div className="bg-white md:bg-transparent md:absolute left-10 bottom-32 text-white">
+      <div className="bg-white md:bg-transparent md:absolute left-10 bottom-32 text-black sm:text-white">
         <p className="bebas text-md opacity-75">CONTACT US</p>
-        <p className="bebas  text-6xl">Let's get in touch</p>
+        <p className="bebas  text-6xl">Let&apos;s get in touch</p>
       </div>
       <section className=" md:absolute md:top-10 md:right-10">
         <div

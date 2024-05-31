@@ -9,7 +9,7 @@ const genAI = new GoogleGenerativeAI("AIzaSyAvPiQi1A3hpkcOL_V4LTggX2_zEihBzWc");
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction:
-    "You are customer service of Blackstudio.id, a video production house. Established in 2019, based in Batu - Malang, East Java. They combine innovative ideas with exceptional execution to deliver high-quality photography, videography, graphic design, and motion graphics. Email for this office is blackstudio.id@gmail.com, user can call this number for order a services. Your office at Jl. Suropati Gg. 9 No.20, RT.1/RW.8, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur . If user ask about cost and price of our product, you must tell user to contact a admin at contact section. Also you can speak multilingual language, like English and Indonesia. If user ask you with Bahasa Indonesia, please answer it with Bahasa too. And dont answer question outside context above.\n\nKeep your answers under 5 sentences long, and use professional tone\nin your answers.",
+    "You are customer service of Blackstudio.id production house. Established in 2019, based in Batu-Malang, East Java. They combine innovative ideas with exceptional execution to deliver high-quality photography, videography, graphic design, and motion graphics. The email for this office is blackstudio.id@gmail.com, user can call this number to order services : 08113577793. Your office at Jl. Suropati Gg. 9 No.20, RT.1/RW.8, Pesanggrahan, Kec. Batu, Kota Batu, Jawa Timur . If a user asks about the cost and price of our product, you must tell the user to ask question in form at the contact section. Also, you can speak multilingual languages, like English and Indonesian. If a user asks you about Bahasa Indonesia, please answer it with Bahasa too. And don't answer questions outside the context above. Keep your answers under 5 sentences long, and use a professional cheerful tone in your answers.",
 });
 
 const generationConfig = {
@@ -51,14 +51,26 @@ const Chatbot = () => {
   const [conversationHistory, setConversationHistory] = useState([]);
 
   const sendMessage = async (input) => {
-    const result = await chatSession.sendMessage(input);
-    console.log(result.response.text());
+    // Add the user message to the conversation history
     setConversationHistory((prevHistory) => [
       ...prevHistory,
-      result.response.text(),
+      { sender: "user", text: input },
     ]);
+
+    // Clear the input field
     setUserInput("");
+
+    // Send the message to the AI and get the response
+    const result = await chatSession.sendMessage(input);
+    const aiResponse = await result.response.text();
+
+    // Add the AI response to the conversation history
+    setConversationHistory((prevHistory) => [
+      ...prevHistory,
+      { sender: "bot", text: aiResponse },
+    ]);
   };
+
   return (
     <main>
       <button
@@ -99,16 +111,20 @@ const Chatbot = () => {
               {conversationHistory.map((message, index) => (
                 <li
                   key={index}
-                  className={`m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left`}
+                  className={`m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 ${
+                    message.sender === "bot" ? "float-left" : "float-right"
+                  }`}
                 >
-                  <p className="font-md text-sm montserat">Chatbot</p>
-                  <p className="font-light text-sm poppins">{message}</p>
+                  <p className="font-xl text-sm montserat">
+                    {message.sender === "bot" ? "Chatbot" : "User"}
+                  </p>
+                  <p className="font-light text-sm poppins">{message.text}</p>
                 </li>
               ))}
-              <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
+              {/* <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
                 <p className="font-md text-sm montserat">User</p>
                 <p className="font-light text-sm poppins">{userInput}</p>
-              </li>
+              </li> */}
             </ul>
 
             <div className="flex gap-1 p-2">
@@ -118,6 +134,12 @@ const Chatbot = () => {
                 placeholder="Ask your question here"
                 value={userInput}
                 onChange={(event) => setUserInput(event.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    sendMessage(userInput);
+                    setUserInput("");
+                  }
+                }}
               />
               <button
                 onClick={() => {

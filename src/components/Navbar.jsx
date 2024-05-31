@@ -113,7 +113,7 @@ const Navbar = () => {
           <div
             className={`${
               !toggle ? "hidden" : "flex"
-            } p-6 absolute top-12 -right-3 z-10 nav flex flex-col justify-center items-start`}
+            } p-6 absolute top-12 -right-3 z-10 bg-black flex flex-col justify-center items-start`}
           >
             <div className="flex justify-evenly items-center py-5">
               <ul className="flex flex-col items-start gap-3 list-none px-5 text-white">
