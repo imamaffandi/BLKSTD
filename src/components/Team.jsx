@@ -6,7 +6,7 @@ import { right, left, container, itemUp } from "../utils/motion";
 const Team = () => {
   return (
     <>
-      <main className="w-full bg-darkest text-light flex flex-col py-5">
+      <main className="w-full flex flex-col py-5">
         <section className="md:h-screen flex flex-col-reverse md:flex-row py-20 px-10 md:p-28">
           <motion.section
             variants={right}

@@ -11,7 +11,7 @@ import {
 
 const App = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden bg-white">
       <Suspense fallback={<Loadingscreen />}>
         <Navbar />
         <Chatbot />

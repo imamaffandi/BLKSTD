@@ -23,7 +23,7 @@ const Testimonial = () => {
   return (
     <Suspense fallback={<Loadingscreen />}>
       <main className="flex flex-col md:flex-row justify-center items-center">
-        <div className="w-full md:w-1/3 p-3 border h-64 rounded-t-md md:rounded-r-none md:rounded-l-md flex flex-col justify-between bg-stone-950">
+        <div className="w-full md:w-1/3 p-3 border h-64 rounded-t-md md:rounded-r-none md:rounded-l-md flex flex-col justify-between ">
           <p className="poppins font-light text-md">
             {" "}
             &quot;Overall videonya much better than the script. Bagus bangeettt
@@ -33,7 +33,7 @@ const Testimonial = () => {
             Lorem ipsum dolor sit amet.
           </p>
         </div>
-        <div className="w-full md:w-1/3 p-3 border border-y-0 md:border-y md:border-x-0 h-64 flex flex-col justify-between bg-stone-950">
+        <div className="w-full md:w-1/3 p-3 border border-y-0 md:border-y md:border-x-0 h-64 flex flex-col justify-between ">
           <p className="poppins font-light text-md">
             {" "}
             &quot;Barusan video dipresentasikan, penontonnya dari Asia dan
@@ -43,7 +43,7 @@ const Testimonial = () => {
           </p>
           <p className="bebas text-lg tracking-wider">Lorem, ipsum dolor.</p>
         </div>
-        <div className="w-full md:w-1/3 p-3 border h-64 rounded-b-md md:rounded-l-none md:rounded-r-md flex flex-col justify-between bg-stone-950">
+        <div className="w-full md:w-1/3 p-3 border h-64 rounded-b-md md:rounded-l-none md:rounded-r-md flex flex-col justify-between ">
           <p className="poppins font-light text-md">
             &quot;Respect buat mas Dika dan tim. Waktu terbatas tapi tetap total
             menggarap materi yang tingkat kesulitannya lumayan tinggi. Semoga ke
@@ -63,7 +63,7 @@ const Items = () => {
       <div className="flex">
         {brands.map((brand) => {
           return (
-            <div key={brand.index} className="px-5 overflow-x-hidden">
+            <div key={brand.index} className="px-5 overflow-x-hidden ">
               <img
                 loading="lazy"
                 className="size-20 md:size-32"
@@ -83,7 +83,7 @@ const About = () => {
     <>
       {/* Home */}
       <Suspense fallback={<Loadingscreen />}>
-        <section className="h-screen bg-darkest w-full overflow-hidden flex flex-col justify-center ">
+        <section className="h-screen  w-full overflow-hidden flex flex-col justify-center ">
           <img
             loading="lazy"
             className="absolute right-0 top-10 md:top-20"
@@ -97,10 +97,10 @@ const About = () => {
             className="p-2 md:p-5 w-[70%] md:w-1/2 mx-10 md:mx-5 relative glass rounded-md"
           >
             <div className="py-10 text-left">
-              <p className="text-2xl md:text-4xl text-center px-5 py-2 tracking-widest text-brand montserat ">
+              <p className="text-2xl md:text-4xl text-center px-5 py-2 tracking-widest  montserat ">
                 CV. KREASI RUMAH HITAM
               </p>
-              <p className="text-md px-5 font-thin text-brand text-left poppins ">
+              <p className="text-md px-5 font-light text-left poppins ">
                 Creative production house established in 2019, based in
                 Batu-Malang, East Java.
                 <span className="hidden md:inline">
@@ -115,7 +115,7 @@ const About = () => {
                 variants={up}
                 initial="hidden"
                 whileInView="visible"
-                className="animated-button rounded-lg py-5 px-10 -bottom-10 right-10 md:-bottom-10 md:right-10"
+                className="animated-button rounded-full py-5 px-10 -bottom-10 right-10 md:-bottom-10 md:right-10"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +124,7 @@ const About = () => {
                 >
                   <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                 </svg>
-                <span className="text bebas text-lg md:text-xl">
+                <span className="text bebas text-lg md:text-xl hover:text-black">
                   Get Started
                 </span>
                 <span className="circle"></span>
@@ -140,16 +140,16 @@ const About = () => {
           </motion.div>
         </section>
         {/* About */}
-        <main className="bg-darkest flex flex-col md:flex-row px-10 py-10">
+        <main className=" flex flex-col md:flex-row px-10 py-10">
           <motion.section
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="text-white flex flex-col justify-center w-full py-2 md:p-0 md:w-1/2 montserat"
+            className=" flex flex-col justify-center w-full py-2 md:p-0 md:w-1/2 montserat"
           >
             <p className="bebas">Our Services</p>
             <p className="text-6xl bebas font-black py-2">What We Do?</p>
-            <p className="rubik w-3/4">
+            <p className="poppins font-light w-3/4">
               At BLACKSTUDIO.ID, we spark imagination with fresh ideas and
               translate them into reality with flawless execution. We deliver
               top-tier photography, videography, graphic design, and motion
@@ -167,7 +167,7 @@ const About = () => {
               variants={itemDown}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center rounded-md p-10  text-white font-semibold"
+              className=" glass flex flex-col items-center rounded-md p-10   font-semibold"
             >
               <img
                 loading="lazy"
@@ -181,7 +181,7 @@ const About = () => {
               variants={itemLeft}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
+              className=" glass flex flex-col items-center rounded-md p-10  font-semibold"
             >
               <img
                 loading="lazy"
@@ -195,7 +195,7 @@ const About = () => {
               variants={itemRight}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
+              className=" glass flex flex-col items-center rounded-md p-10  font-semibold"
             >
               <img
                 loading="lazy"
@@ -209,7 +209,7 @@ const About = () => {
               variants={itemUp}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center rounded-md p-10 text-white font-semibold"
+              className=" glass flex flex-col items-center rounded-md p-10  font-semibold"
             >
               <img
                 loading="lazy"
@@ -221,7 +221,7 @@ const About = () => {
             </motion.div>
           </motion.section>
         </main>
-        <main className="bg-darkest flex flex-col-reverse md:flex-row gap-10 items-center p-10 ">
+        <main className=" flex flex-col-reverse md:flex-row gap-10 items-center p-10 ">
           <motion.section
             variants={right}
             initial="hidden"
@@ -233,13 +233,13 @@ const About = () => {
             variants={left}
             initial="hidden"
             whileInView="visible"
-            className="w-full md:w-1/2 text-white"
+            className="w-full md:w-1/2 "
           >
             <p className="bebas">About Us</p>
             <p className="text-6xl py-2 font-bold bebas uppercase">
               Bringing your vision to life
             </p>
-            <p className="montserat">
+            <p className="poppins">
               We offer a comprehensive suite of services to bring your vision to
               life. From stunning photography and captivating videography to
               impactful graphic design and dynamic motion graphics, we create
@@ -248,7 +248,7 @@ const About = () => {
             </p>
           </motion.section>
         </main>
-        <main className="bg-darkest text-white">
+        <main className=" ">
           <motion.p
             variants={right}
             initial="hidden"
@@ -258,15 +258,19 @@ const About = () => {
             Our Clients
           </motion.p>
           <section className="relative overflow-hidden py-10">
-            <Marquee speed={100} pauseOnHover="true" className="flex">
+            <Marquee
+              speed={100}
+              pauseOnHover="true"
+              className="flex bg-black rounded-full"
+            >
               <Items />
             </Marquee>
           </section>
         </main>
-        <p className="text-white bebas px-5 text-2xl text-center bg-darkest">
+        <p className=" bebas px-5 text-2xl text-center ">
           What they say about us
         </p>
-        <section className="w-full bg-darkest text-white flex-col md:flex-row flex p-3">
+        <section className="w-full   flex-col md:flex-row flex p-3">
           <Testimonial />
         </section>
       </Suspense>

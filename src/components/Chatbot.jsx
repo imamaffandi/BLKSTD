@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
 } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyAvPiQi1A3hpkcOL_V4LTggX2_zEihBzWc");
+const genAI = new GoogleGenerativeAI("AIzaSyBu57YB9IHabgyJA4dgGYYwSjtGGuArlhY");
 const model = genAI.getGenerativeModel({
   model: "gemini-1.5-flash",
   systemInstruction:
@@ -42,29 +42,22 @@ const safetySettings = [
 const Chatbot = () => {
   const [toggle, setToggle] = useState(false);
   const [userInput, setUserInput] = useState("");
+  const [conversationHistory, setConversationHistory] = useState([]);
   const [chatSession, setChatSession] = useState(
     model.startChat({
       generationConfig,
       safetySettings,
     })
   );
-  const [conversationHistory, setConversationHistory] = useState([]);
 
   const sendMessage = async (input) => {
-    // Add the user message to the conversation history
     setConversationHistory((prevHistory) => [
       ...prevHistory,
       { sender: "user", text: input },
     ]);
-
-    // Clear the input field
     setUserInput("");
-
-    // Send the message to the AI and get the response
     const result = await chatSession.sendMessage(input);
     const aiResponse = await result.response.text();
-
-    // Add the AI response to the conversation history
     setConversationHistory((prevHistory) => [
       ...prevHistory,
       { sender: "bot", text: aiResponse },
@@ -78,7 +71,7 @@ const Chatbot = () => {
           setToggle(!toggle);
         }}
         aria-label="Chatbot"
-        className="fixed animate-bounce rounded-full p-2 text-center right-5 bottom-5 sm:right-10 sm:bottom-10 z-20 bg-black hover:scale-105 active:scale-95 transition cursor-pointer"
+        className="fixed rounded-full p-2 text-center right-5 bottom-5 sm:right-10 sm:bottom-10 z-20 bg-black hover:scale-105 active:scale-95 transition cursor-pointer"
       >
         <svg
           className="size-7"
@@ -105,14 +98,16 @@ const Chatbot = () => {
               <li className="m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left">
                 <p className="font-md text-sm montserat">Chatbot</p>
                 <p className="font-light text-sm poppins">
-                  Hi, How can I help you today?
+                  Hi, Welcome to Blackstudio.id, How can I help you today?
                 </p>
               </li>
               {conversationHistory.map((message, index) => (
                 <li
                   key={index}
-                  className={`m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 ${
-                    message.sender === "bot" ? "float-left" : "float-right"
+                  className={`m-1 bg-white rounded-t-md w-[80%] p-1 ${
+                    message.sender === "bot"
+                      ? "float-left rounded-r-md"
+                      : "float-right rounded-l-md"
                   }`}
                 >
                   <p className="font-xl text-sm montserat">
@@ -121,10 +116,6 @@ const Chatbot = () => {
                   <p className="font-light text-sm poppins">{message.text}</p>
                 </li>
               ))}
-              {/* <li className="m-1 bg-white rounded-l-md rounded-t-md w-[80%] p-1 float-right">
-                <p className="font-md text-sm montserat">User</p>
-                <p className="font-light text-sm poppins">{userInput}</p>
-              </li> */}
             </ul>
 
             <div className="flex gap-1 p-2">

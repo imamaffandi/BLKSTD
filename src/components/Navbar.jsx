@@ -5,13 +5,14 @@ import { instagram, tiktok, youtube } from "../assets";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { right, left } from "../utils/motion";
+import { Switcher } from ".";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   return (
     <main className="fixed h-screen z-50">
-      <nav className="nav fixed w-full">
+      <nav className=" fixed w-full">
         <section className="hidden md:flex justify-between items-center text-lightest font-black p-2 md:py-2 md:px-10 md:pr-32">
           <motion.div
             variants={left}
@@ -85,6 +86,7 @@ const Navbar = () => {
                 );
               }}
             />
+            <Switcher />
           </motion.div>
         </section>
         <section className="flex items-center justify-between md:hidden nav p-3 w-full">

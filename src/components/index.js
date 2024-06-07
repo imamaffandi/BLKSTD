@@ -5,4 +5,14 @@ import About from "./About";
 import Project from "./Project";
 import Team from "./Team";
 import Loadingscreen from "./Loadingscreen";
-export { Navbar, Contact, Chatbot, About, Project, Team, Loadingscreen };
+import { Switcher } from "./Switcher";
+export {
+  Navbar,
+  Contact,
+  Chatbot,
+  About,
+  Project,
+  Team,
+  Loadingscreen,
+  Switcher,
+};

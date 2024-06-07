@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -13,6 +14,6 @@ module.exports = {
         brand: "#FFFFFF",
       },
     },
+    plugins: [],
   },
-  plugins: [],
 };

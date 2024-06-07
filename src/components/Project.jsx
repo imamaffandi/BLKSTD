@@ -7,13 +7,13 @@ const Project = () => {
   return (
     <>
       {" "}
-      <main className="md:py-5 bg-darkest">
+      <main className="md:py-5 ">
         <div className="flex flex-col md:flex-row h-screen">
           <motion.section
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="px-10 pt-10 md:p-28 w-full  md:w-1/2 text-white"
+            className="px-10 pt-10 md:p-28 w-full  md:w-1/2 "
           >
             <p className="text-md font-black bebas opacity-75">
               Our latest projects
@@ -33,7 +33,7 @@ const Project = () => {
             variants={left}
             initial="hidden"
             whileInView="visible"
-            className="px-10 md:p-28 w-full md:w-1/2 text-white"
+            className="px-10 md:p-28 w-full md:w-1/2 "
           >
             <img loading="lazy" src={dummysvg} alt="" />
           </motion.section>
@@ -43,7 +43,7 @@ const Project = () => {
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="text-white bebas pl-10 text-2xl"
+            className=" bebas pl-10 text-2xl"
           >
             Digital Ads, Film, and Company Profile{" "}
           </motion.p>
@@ -72,7 +72,7 @@ const Project = () => {
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
                     "
                   />
-                  <p className="p-3 absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6 text-white hover:text-light">
+                  <p className="p-3 text-white absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6  hover:text-light">
                     {list.title}
                   </p>
                 </motion.article>
@@ -85,7 +85,7 @@ const Project = () => {
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="text-white bebas pl-10 text-2xl"
+            className=" bebas pl-10 text-2xl"
           >
             Event Documentation & Trip Documentation{" "}
           </motion.p>
@@ -114,7 +114,7 @@ const Project = () => {
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
                     "
                   />
-                  <p className="p-3 absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6 text-white hover:text-light">
+                  <p className="p-3 text-white absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6  hover:text-light">
                     {list.title}
                   </p>
                 </motion.article>
@@ -127,7 +127,7 @@ const Project = () => {
             variants={right}
             initial="hidden"
             whileInView="visible"
-            className="text-white bebas pl-10 text-2xl"
+            className=" bebas pl-10 text-2xl"
           >
             Event Multimedia & Motion Graphic{" "}
           </motion.p>
@@ -156,7 +156,7 @@ const Project = () => {
                     className="absolute inset-0 object-cover w-full h-full -z-10 hover:scale-110 transition
                     "
                   />
-                  <p className="p-3 absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6 text-white hover:text-light">
+                  <p className="p-3 text-white absolute bottom-0 text-lg w-full bg-gradient-to-t from-black font-semibold leading-6  hover:text-light">
                     {list.title}
                   </p>
                 </motion.article>
