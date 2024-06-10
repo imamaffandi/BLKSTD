@@ -8,10 +8,8 @@ module.exports = {
       colors: {
         darkest: "#0e0e0e",
         dark: "#1D1C29",
-        mid: "red",
-        light: "#F9FAFB",
+        light: "#F1F8E8",
         lightest: "#F1F1F1",
-        brand: "#FFFFFF",
       },
     },
     plugins: [],

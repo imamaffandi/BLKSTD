@@ -7,8 +7,8 @@ const Project = () => {
   return (
     <>
       {" "}
-      <main className="md:py-5 ">
-        <div className="flex flex-col md:flex-row h-screen">
+      <main className="md:py-5 pt-10">
+        <div className="flex flex-col md:flex-row">
           <motion.section
             variants={right}
             initial="hidden"
