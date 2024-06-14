@@ -5,7 +5,6 @@ import Marquee from "react-fast-marquee";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import Loadingscreen from "./Loadingscreen";
-import { lazy } from "react";
 import {
   right,
   left,
