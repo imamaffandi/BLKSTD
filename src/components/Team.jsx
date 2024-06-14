@@ -1,4 +1,4 @@
-import { instagram } from "../assets";
+import { instadark } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
 import { fren } from "../assets";
@@ -65,7 +65,7 @@ const Team = () => {
               </div>
               <img
                 loading="lazy"
-                src={instagram}
+                src={instadark}
                 className="size-7 self-center hover:cursor-pointer"
                 alt=""
                 onClick={() => {

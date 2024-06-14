@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import Loadingscreen from "./Loadingscreen";
+import { lazy } from "react";
 import {
   right,
   left,
@@ -159,22 +160,22 @@ const About = () => {
             variants={container}
             initial="hidden"
             whileInView="visible"
-            className="grid grid-cols-2 gap-1 md:gap-3"
+            className="grid grid-cols-2 place-self-center gap-1"
           >
             {" "}
             <motion.div
               variants={itemDown}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center justify-center rounded-md size-48   font-semibold"
+              className=" glass flex flex-col items-center justify-center rounded-md size-32 md:size-48 font-semibold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
+                stroke="#7e7e7e"
+                className="size-10 md:size-20"
               >
                 <path
                   strokeLinecap="round"
@@ -189,15 +190,15 @@ const About = () => {
               variants={itemLeft}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center justify-center rounded-md size-48  font-semibold"
+              className=" glass flex flex-col items-center justify-center rounded-md size-32 md:size-48 font-semibold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
+                stroke="#7e7e7e"
+                className="size-10 md:size-20"
               >
                 <path
                   strokeLinecap="round"
@@ -217,15 +218,15 @@ const About = () => {
               variants={itemRight}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center justify-center rounded-md size-48  font-semibold"
+              className=" glass flex flex-col items-center justify-center rounded-md size-32 md:size-48  font-semibold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
+                stroke="#7e7e7e"
+                className="size-10 md:size-20"
               >
                 <path
                   strokeLinecap="round"
@@ -240,15 +241,15 @@ const About = () => {
               variants={itemUp}
               initial="hidden"
               whileInView="visible"
-              className=" glass flex flex-col items-center justify-center rounded-md size-48  font-semibold"
+              className=" glass flex flex-col items-center justify-center rounded-md size-32 md:size-48  font-semibold"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
+                stroke="#7e7e7e"
+                className="size-10 md:size-20"
               >
                 <path
                   strokeLinecap="round"
@@ -301,7 +302,7 @@ const About = () => {
             <Marquee
               speed={100}
               pauseOnHover="true"
-              className="flex bg-black rounded-full"
+              className="flex bg-black rounded-full cursor-pointer"
             >
               <Items />
             </Marquee>
