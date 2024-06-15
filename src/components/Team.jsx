@@ -3,6 +3,7 @@ import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
 import { fren } from "../assets";
 import { right, left, container, itemUp } from "../utils/motion";
+import { team } from "../constant";
 const Team = () => {
   return (
     <>
@@ -41,39 +42,40 @@ const Team = () => {
           whileInView="visible"
           className="flex flex-wrap gap-10 justify-evenly "
         >
-          <motion.section
-            variants={itemUp}
-            initial="hidden"
-            whileInView="visible"
-            className="relative flex flex-col w-56 "
-          >
-            <div className="relative overflow-hidden">
-              <img
-                loading="lazy"
-                src="https://docs.material-tailwind.com/img/team-3.jpg"
-                alt="profile-picture"
-              />
-            </div>
-            <main className="flex gap-5">
-              <div className="flex flex-col">
-                <h4 className="bebas text-2xl font-semibold tracking-normal text-blue-gray-900">
-                  Natalie Paisley
-                </h4>
-                <p className="block montserat font-sans font-medium text-gray-400">
-                  CEO / Co-Founder
-                </p>
-              </div>
-              <img
-                loading="lazy"
-                src={instadark}
-                className="size-7 self-center hover:cursor-pointer"
-                alt=""
-                onClick={() => {
-                  window.open("https://www.instagram.com/blackstudio.id/");
-                }}
-              />
-            </main>
-          </motion.section>
+          {team.map((list) => {
+            return (
+              <motion.section
+                key={list.index}
+                variants={itemUp}
+                initial="hidden"
+                whileInView="visible"
+                className="relative flex flex-col w-56 "
+              >
+                <div className="relative overflow-hidden">
+                  <img loading="lazy" src={list.image} alt={list.name} />
+                </div>
+                <main className="flex justify-between px-2">
+                  <div className="flex flex-col">
+                    <h4 className="bebas text-2xl font-semibold tracking-normal text-blue-gray-900">
+                      {list.name}
+                    </h4>
+                    <p className="block montserat font-sans font-medium text-gray-400">
+                      {list.job}
+                    </p>
+                  </div>
+                  <img
+                    loading="lazy"
+                    src={instadark}
+                    className="size-7 self-center hover:cursor-pointer"
+                    alt=""
+                    onClick={() => {
+                      window.open(`${list.instagram}`);
+                    }}
+                  />
+                </main>
+              </motion.section>
+            );
+          })}
         </motion.main>
       </main>
     </>

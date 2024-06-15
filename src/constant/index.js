@@ -8,6 +8,8 @@ import {
   tandamata,
 } from "../assets/projects/documentation";
 import { idx, kpei, mks2, mss, pasarmodal } from "../assets/projects/motion";
+import { placeholder } from "../assets/team";
+
 const links = [
   {
     id: "about",
@@ -52,11 +54,83 @@ export const socmed = [
 
 const team = [
   {
-    name: "",
-    instagram: "",
-    job: "",
-    image: "",
+    name: "Andika Aris",
+    instagram:
+      "https://www.instagram.com/geckoandi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "CEO",
+    image: placeholder,
     index: 1,
+  },
+  {
+    name: "Nova Laksmana",
+    instagram:
+      "https://www.instagram.com/not_stupidpeople?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Drone Pilot",
+    image: placeholder,
+    index: 2,
+  },
+  {
+    name: "Rully Okta",
+    instagram:
+      "https://www.instagram.com/rullyoktdwynti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Graphic Designer",
+    image: placeholder,
+    index: 3,
+  },
+  {
+    name: "Helida Laylatus",
+    instagram:
+      "https://www.instagram.com/helidaaa_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Finance",
+    image: placeholder,
+    index: 4,
+  },
+  {
+    name: "Audrey Agessy",
+    instagram:
+      "https://www.instagram.com/adut.blend?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Motion Graphic",
+    image: placeholder,
+    index: 5,
+  },
+  {
+    name: "Kevin Rizkyanto",
+    instagram:
+      "https://www.instagram.com/kevin_rizks?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Photographer",
+    image: placeholder,
+    index: 6,
+  },
+  {
+    name: "Okta Viano",
+    instagram:
+      "https://www.instagram.com/tapianoo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Video Editor",
+    image: placeholder,
+    index: 7,
+  },
+  {
+    name: "Adri Irfanto",
+    instagram:
+      "https://www.instagram.com/hereisadri.vsa?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Videographer",
+    image: placeholder,
+    index: 8,
+  },
+  {
+    name: "Rafli Fadillah",
+    instagram:
+      "https://www.instagram.com/rflmks_2?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    job: "Videographer",
+    image: placeholder,
+    index: 9,
+  },
+  {
+    name: "Imam Affandi",
+    instagram: "https://www.instagram.com/imamaffandi01/",
+    job: "Engineer",
+    image: placeholder,
+    index: 10,
   },
 ];
 const testimoni = [
