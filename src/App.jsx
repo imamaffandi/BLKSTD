@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useEffect } from "react";
 import {
   Navbar,
   Contact,
@@ -11,10 +11,30 @@ import {
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  useEffect(() => {
+    const prefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const storedTheme = localStorage.getItem("Theme");
+    if (storedTheme === "light__mode") {
+      setIsDarkMode(false);
+    } else if (storedTheme === "dark__mode") {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(prefersDarkMode);
+    }
+    updateBodyClass(isDarkMode);
+  }, []);
+
+  const updateBodyClass = (isDarkMode) => {
+    document.documentElement.classList.toggle("dark-mode", isDarkMode);
+  };
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark-mode");
+    updateBodyClass(!isDarkMode);
+
+    localStorage.setItem("Theme", isDarkMode ? "dark__mode" : "light__mode");
   };
 
   return (

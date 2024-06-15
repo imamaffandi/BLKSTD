@@ -42,6 +42,7 @@ const safetySettings = [
 const Chatbot = () => {
   const [toggle, setToggle] = useState(false);
   const [userInput, setUserInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const [conversationHistory, setConversationHistory] = useState([]);
   const [chatSession, setChatSession] = useState(
     model.startChat({
@@ -56,12 +57,14 @@ const Chatbot = () => {
       { sender: "user", text: input },
     ]);
     setUserInput("");
+    setLoading(true);
     const result = await chatSession.sendMessage(input);
     const aiResponse = await result.response.text();
     setConversationHistory((prevHistory) => [
       ...prevHistory,
       { sender: "bot", text: aiResponse },
     ]);
+    setLoading(false);
   };
 
   return (
@@ -116,6 +119,18 @@ const Chatbot = () => {
                   <p className="font-light text-sm poppins">{message.text}</p>
                 </li>
               ))}
+              {loading && (
+                <div
+                  key={conversationHistory.length}
+                  className="m-1 bg-white rounded-t-md p-1 float-left rounded-r-md"
+                >
+                  <div className="flex items-center space-x-2">
+                    <div className="size-3 rounded-full bg-black animate-pulse"></div>
+                    <div className="size-3 rounded-full bg-black animate-pulse delay-75"></div>
+                    <div className="size-3 rounded-full bg-black animate-pulse delay-150"></div>
+                  </div>
+                </div>
+              )}
             </ul>
 
             <div className="flex gap-1 p-2">
