@@ -114,7 +114,7 @@ const About = () => {
                 variants={up}
                 initial="hidden"
                 whileInView="visible"
-                className="animated-button rounded-full py-5 px-10 -bottom-10 right-10 md:-bottom-10 md:right-10"
+                className="animated-button bg-gradient-to-tr from-dark via-mid to-dark text-white rounded-full py-2 px-10 -bottom-5 right-10 md:-bottom-5 md:right-10"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -301,7 +301,7 @@ const About = () => {
             <Marquee
               speed={100}
               pauseOnHover="true"
-              className="flex bg-black rounded-full cursor-pointer"
+              className="flex bg-gradient-to-r from-darkest via-mid to-darkest rounded-full cursor-pointer"
             >
               <Items />
             </Marquee>

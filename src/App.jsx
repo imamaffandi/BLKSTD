@@ -44,7 +44,7 @@ const App = () => {
         <Chatbot />
         <div
           className={` ${
-            isDarkMode ? "bg-darkest text-light" : "bg-light text-darkest"
+            isDarkMode ? "bg-darkest text-lightest" : "bg-lightest text-darkest"
           }`}
         >
           <button

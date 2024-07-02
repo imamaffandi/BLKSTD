@@ -94,7 +94,7 @@ const Chatbot = () => {
       {toggle ? (
         <div className=" bottom-20 right-5 sm:bottom-20 sm:right-10 z-50 fixed">
           <div className="w-80 rounded-lg overflow-hidden p-2 glass">
-            <div className="bg-black w-full text-white bebas tracking-wider rounded-md text-lg p-2">
+            <div className="bg-gradient-to-t from-dark via-darkest to-dark text-white w-full bebas tracking-wider rounded-md text-lg p-2">
               Chatbot
             </div>
             <ul className=" overflow-y-scroll h-80 sm:h-96 ">
