@@ -7,6 +7,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0e0e0e;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333236;
+}
+/* Fonts */
 .poppins {
   font-family: "Poppins", sans-serif;
 }
@@ -45,9 +61,6 @@
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
-}
-::-webkit-scrollbar {
-  width: 0px;
 }
 
 /* Back to top */
