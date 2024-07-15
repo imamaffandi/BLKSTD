@@ -97,8 +97,8 @@ const Chatbot = () => {
             <div className="bg-gradient-to-t from-dark via-darkest to-dark text-white w-full bebas tracking-wider rounded-md text-lg p-2">
               Chatbot
             </div>
-            <ul className=" overflow-y-scroll h-80 sm:h-96 ">
-              <li className="m-1 bg-white rounded-r-md rounded-t-md w-[80%] p-1 float-left">
+            <ul className="chatbot overflow-y-scroll h-80 sm:h-96 ">
+              <li className="m-1 bg-white rounded-r-xl rounded-t-xl w-[80%] p-1 float-left">
                 <p className="font-md text-sm montserat">Chatbot</p>
                 <p className="font-light text-sm poppins">
                   Hi, Welcome to Blackstudio.id, How can I help you today?
@@ -107,10 +107,10 @@ const Chatbot = () => {
               {conversationHistory.map((message, index) => (
                 <li
                   key={index}
-                  className={`m-1 bg-white rounded-t-md w-[80%] p-1 ${
+                  className={`m-1 bg-white rounded-t-xl w-[80%] p-1 ${
                     message.sender === "bot"
-                      ? "float-left rounded-r-md"
-                      : "float-right rounded-l-md"
+                      ? "float-left rounded-r-xl"
+                      : "float-right rounded-l-xl"
                   }`}
                 >
                   <p className="font-xl text-sm montserat">
@@ -122,7 +122,7 @@ const Chatbot = () => {
               {loading && (
                 <div
                   key={conversationHistory.length}
-                  className="m-1 bg-white rounded-t-md p-1 float-left rounded-r-md"
+                  className="m-1 bg-white rounded-t-xl p-3 float-left rounded-r-xl"
                 >
                   <div className="flex items-center space-x-2">
                     <div className="size-3 rounded-full bg-black animate-pulse"></div>

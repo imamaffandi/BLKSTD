@@ -22,6 +22,9 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #333236;
 }
+.chatbot::-webkit-scrollbar {
+  display: none;
+}
 /* Fonts */
 .poppins {
   font-family: "Poppins", sans-serif;
