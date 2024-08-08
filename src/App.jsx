@@ -10,7 +10,7 @@ import {
 } from "./components";
 
 const App = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   useEffect(() => {
     const prefersDarkMode =
       window.matchMedia &&
