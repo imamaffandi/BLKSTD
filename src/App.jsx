@@ -50,6 +50,7 @@ const App = () => {
           <button
             className={`fixed z-50 top-5 md:top-4 right-10 md:right-5 bg-white rounded-full p-1 hover:scale-105 active:scale-95 transition`}
             id="switchmode"
+            aria-label="Switch"
             onClick={toggleDarkMode}
           >
             {isDarkMode ? (

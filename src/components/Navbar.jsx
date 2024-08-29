@@ -122,6 +122,7 @@ const Navbar = () => {
                   <li key={link.id}>
                     <Link
                       to={link.id}
+                      href={`#${link.id}`}
                       smooth="true"
                       className={`${
                         active === link.title ? "opacity-100" : "opacity-50"

@@ -144,7 +144,7 @@ const Contact = () => {
             </div>
           </section>
           <section>
-            <Link to="about" smooth="true">
+            <Link to="about" href="/about" smooth="true">
               <button className="btt-btn flex gap-2 items-center">
                 <div className="bebas text-xl">Back to Top</div>
                 <svg
