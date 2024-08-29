@@ -37,6 +37,7 @@ const Navbar = () => {
                     to={link.id}
                     smooth="true"
                     duration={500}
+                    href={`#${link.id}`}
                     className={`${
                       active === link.title ? "opacity-100" : "opacity-50"
                     } hover:text-white hover:opacity-75 text-[18px] font-medium bebas cursor-pointer`}
