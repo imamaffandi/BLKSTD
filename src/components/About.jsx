@@ -109,7 +109,7 @@ const About = () => {
                 </span>
               </p>
             </div>
-            <Link to="contact" smooth="true">
+            <Link to="contact" href="/contact" smooth="true">
               <motion.button
                 variants={up}
                 initial="hidden"
