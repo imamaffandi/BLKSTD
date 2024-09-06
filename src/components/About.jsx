@@ -307,12 +307,12 @@ const About = () => {
             </Marquee>
           </section>
         </main>
-        <p className=" bebas px-5 text-2xl text-center ">
+        {/* <p className=" bebas px-5 text-2xl text-center ">
           What they say about us
         </p>
         <section className="w-full   flex-col md:flex-row flex p-3">
           <Testimonial />
-        </section>
+        </section> */}
       </Suspense>
     </>
   );

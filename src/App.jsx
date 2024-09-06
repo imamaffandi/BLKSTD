@@ -5,7 +5,7 @@ import {
   Chatbot,
   About,
   Project,
-  Team,
+  // Team,
   Loadingscreen,
 } from "./components";
 
@@ -87,7 +87,7 @@ const App = () => {
           </button>
           <About />
           <Project />
-          <Team />
+          {/* <Team /> */}
           <Contact />
         </div>
       </Suspense>
